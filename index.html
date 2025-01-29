@@ -19,11 +19,26 @@
         </div>
     </div>
 
-    <!-- Add Audio (hidden and looped) -->
-    <audio autoplay loop style="display:none;">
+    <!-- Add Audio (hidden) -->
+    <audio id="audio" loop style="display:none;">
         <source src="audio/Tyler-The-Creator-feat-Lola-Young-Like-Him.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
+    <!-- Play Button -->
+    <button id="play-button">Play Music</button>
+
+    <script>
+        // Get the audio element and the play button
+        const audio = document.getElementById('audio');
+        const playButton = document.getElementById('play-button');
+
+        // Add an event listener to the play button
+        playButton.addEventListener('click', function() {
+            audio.play(); // Play the audio when the button is clicked
+            playButton.style.display = 'none'; // Hide the play button after it's clicked
+        });
+    </script>
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
