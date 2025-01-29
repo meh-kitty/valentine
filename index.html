@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,10 +20,18 @@
     </div>
 
     <!-- Add Audio (hidden and looped) -->
-    <audio autoplay loop style="display:none;">
+    <audio id="audio" autoplay loop>
         <source src="Tyler-The-Creator-feat-Lola-Young-Like-Him.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
+    <script>
+        // Ensuring the audio plays immediately when the page loads
+        window.onload = function() {
+            var audio = document.getElementById('audio');
+            audio.play(); // Ensure it starts playing immediately
+        };
+    </script>
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
