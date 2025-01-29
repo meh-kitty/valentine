@@ -26,12 +26,18 @@
     </audio>
 
     <script>
-        // Ensuring the audio plays immediately when the page loads
-        window.onload = function() {
-            var audio = document.getElementById('audio');
-            audio.play(); // Ensure it starts playing immediately
+    // Ensuring the audio plays immediately when the page loads
+    window.onload = function() {
+        var audio = document.getElementById('audio');
+        audio.play(); // Try to play the audio
+
+        // Check if autoplay fails (due to browser restrictions)
+        audio.oncanplaythrough = function() {
+            audio.play(); // Start playing once it's ready
         };
-    </script>
+    };
+</script>
+
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
 </body>
